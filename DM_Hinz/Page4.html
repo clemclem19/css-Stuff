@@ -1,0 +1,31 @@
+<html>
+<header>
+<link href="Page4.css" rel="stylesheet" type="text/css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.cube').click(function() {
+				$('.cube__face--front').toggleClass('downFront');
+				$('.cube__face--top').toggleClass('downTop');
+				$('.cube__face--left').toggleClass('downLeft');
+				$('.cube__face--right').toggleClass('downRight');
+				$('.cube__face--back').toggleClass('downBack');
+		});
+	});
+	</script>
+</header>
+
+	<div class="center">
+		<div class="scene">
+		  <div class="cube">
+			<div class="cube__face cube__face--front" ></div>
+			<div class="cube__face cube__face--back"></div>
+			<div class="cube__face cube__face--right"></div>
+			<div class="cube__face cube__face--left"></div>
+			<div class="cube__face cube__face--top"></div>
+			<div class="cube__face cube__face--bottom"></div>
+		  </div>
+		</div>
+	</div>
+</html>

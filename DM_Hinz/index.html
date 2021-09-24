@@ -1,0 +1,244 @@
+<html>
+<header>
+<link href="index.css" rel="stylesheet" type="text/css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.card5').click(function() {
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.card4').click(function() {
+			
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.card2').click(function() {
+			
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.card3').click(function() {
+			
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.card1').click(function() {
+			
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.next').click(function() {
+			$(".next").attr("disabled", true);
+			$(".previous").attr("disabled", true);
+			$('.card5').removeClass('card5').addClass('temp');
+			$('.card4').removeClass('card4').addClass('card5');
+			$('.card3').removeClass('card3').addClass('card4');
+			$('.card2').removeClass('card2').addClass('card3');
+			$('.card1').removeClass('card1').addClass('card2');
+			setTimeout(function(){
+				$('.temp').removeClass('temp').addClass('card1');
+				$(".next").attr("disabled", false);
+				$(".previous").attr("disabled", false);
+			}, 2000);
+			
+		});
+		$('.previous').click(function() {
+			$(".previous").attr("disabled", true);
+				$(".next").attr("disabled", true);
+			$('.card1').removeClass('card1').addClass('temp2');
+			$('.card2').removeClass('card2').addClass('card1');
+			$('.card3').removeClass('card3').addClass('card2');
+			$('.card4').removeClass('card4').addClass('card3');
+			$('.card5').removeClass('card5').addClass('card4');
+			setTimeout(function(){
+				$('.temp2').removeClass('temp2').addClass('card5');
+				$(".previous").attr("disabled", false);
+					$(".next").attr("disabled", false);
+			}, 2000);
+			
+		});
+		$('.cube').click(function() {
+				$('.cube__face--front').toggleClass('downFront');
+				$('.cube__face--top').toggleClass('downTop');
+				$('.cube__face--left').toggleClass('downLeft');
+				$('.cube__face--right').toggleClass('downRight');
+				$('.cube__face--back').toggleClass('downBack');
+		});
+		
+		
+		
+		$('.turnLeft1').click(function() {
+			$('.box').removeClass('box').addClass('boxturnLeft1');
+			setTimeout(function(){
+				$('.boxturnLeft1').removeClass('boxturnLeft1').addClass('boxLeft');
+			}, 2000);
+		});
+		$('.turnLeft2').click(function() {
+			$('.boxLeft').removeClass('boxLeft').addClass('boxturnBack1');
+			setTimeout(function(){
+				$('.boxturnBack1').removeClass('boxturnBack1').addClass('boxBack');
+			}, 2000);
+		});
+		$('.turnLeft3').click(function() {
+			$('.boxBack').removeClass('boxBack').addClass('boxturnRight1');
+			setTimeout(function(){
+				$('.boxturnRight1').removeClass('boxturnRight1').addClass('boxRight');
+			}, 2000);
+		});
+		$('.turnLeft4').click(function() {
+			$('.boxRight').removeClass('boxRight').addClass('boxturn1');
+			setTimeout(function(){
+				$('.boxturn1').removeClass('boxturn1').addClass('box');
+			}, 2000);
+		});
+		<!-- ------------------------------------------------------------------------------------------------------- -->
+		$('.turnRight1').click(function() {
+			$('.box').removeClass('box').addClass('boxturnRight2');
+			setTimeout(function(){
+				$('.boxturnRight2').removeClass('boxturnRight2').addClass('boxRight');
+			}, 2000);
+		});
+		$('.turnRight4').click(function() {
+			$('.boxRight').removeClass('boxRight').addClass('boxturnBack2');
+			setTimeout(function(){
+				$('.boxturnBack2').removeClass('boxturnBack2').addClass('boxBack');
+			}, 2000);
+		});
+		$('.turnRight3').click(function() {
+			$('.boxBack').removeClass('boxBack').addClass('boxturnLeft2');
+			setTimeout(function(){
+				$('.boxturnLeft2').removeClass('boxturnLeft2').addClass('boxLeft');
+			}, 2000);
+		});
+		$('.turnRight2').click(function() {
+			$('.boxLeft').removeClass('boxLeft').addClass('boxturn2');
+			setTimeout(function(){
+				$('.boxturn2').removeClass('boxturn2').addClass('box');
+			}, 2000);
+		});
+		<!-- ------------------------------------------------------------------------------------------------------- -->
+		$('.flip1').click(function() {
+			$('.box').removeClass('box').addClass('boxFrontBack');
+			setTimeout(function(){
+				$('.boxFrontBack').removeClass('boxFrontBack').addClass('boxBack');
+			}, 2000);
+		});
+		
+		$('.flip3').click(function() {
+			$('.boxBack').removeClass('boxBack').addClass('boxBackFront');
+			setTimeout(function(){
+				$('.boxBackFront').removeClass('boxBackFront').addClass('box');
+			}, 2000);
+		});
+		$('.flip2').click(function() {
+			$('.boxLeft').removeClass('boxLeft').addClass('boxLeftRight');
+			setTimeout(function(){
+				$('.boxLeftRight').removeClass('boxLeftRight').addClass('boxRight');
+			}, 2000);
+		});
+		$('.flip4').click(function() {
+			$('.boxRight').removeClass('boxRight').addClass('boxRightLeft');
+			setTimeout(function(){
+				$('.boxRightLeft').removeClass('boxRightLeft').addClass('boxLeft');
+			}, 2000);
+		});
+		
+		
+		
+		
+		
+	});
+	</script>
+</header>
+<div class="scene1">
+  <div class="box">
+    <div class="box__face box__face--front">
+		<div class="scene">
+			<div class="prism">
+				<div class="front"> Bienvenue sur mon site</div>
+				<div class="bottom">Hinz,Clément, L3 Informatique</div>
+				<div class="back"><h3 class="centerText">clement.hinz@etudiant.upf.pf</h3></div>
+			</div>
+		</div>
+		<div class="turnpage">
+			<div class="turnLeft1">Left</div>
+			<div class="flip1">Flip</div>
+			<div class="nada">Current</div>
+			<div class="turnRight1">Right</div>
+		</div>
+	</div>
+    <div class="box__face box__face--back">
+		<div class="scene2">
+			<input type="submit" value="" class="next">
+			<input type="submit" value="" class="previous">
+			<img src="Character_Albedo_Card.png" class="card1">
+			<img src="Character_Diluc_Card.png"class="card2">
+			<img src="Character_Tartaglia_Card.png" class="card3">
+			<img src="Character_Xiao_Card.png" class="card4">
+			<img src="Character_Zhongli_Card.png"class="card5">
+		</div>
+		<div class="turnpage2">
+			<div class="turnLeft3">Left</div>
+			<div class="flip3">Flip</div>
+			<div class="nada">Current</div>
+			<div class="turnRight3">Right</div>
+		</div>
+	</div>
+    <div class="box__face box__face--right">
+		<div class="center">
+			<div class="scene3">
+			  <div class="cube">
+				<div class="cube__face cube__face--front" ></div>
+				<div class="cube__face cube__face--back"></div>
+				<div class="cube__face cube__face--right"></div>
+				<div class="cube__face cube__face--left"></div>
+				<div class="cube__face cube__face--top"></div>
+				<div class="cube__face cube__face--bottom"></div>
+			  </div>
+			</div>
+			<div class="turnpage3">
+			<div class="turnLeft4">Left</div>
+			<div class="flip4">Flip</div>
+			<div class="nada">Current</div>
+			<div class="turnRight4">Right</div>
+		</div>
+		</div>
+		
+	</div>
+    <div class="box__face box__face--left">
+		<div class="scene7">
+		  <div class="pyramid3">
+			<div class="Top TopFront"></div>
+			<div class="Top Topbackpyr"></div>
+			<div class="Top Topleft"></div>
+			<div class="Top Topright"></div>
+			<div class="Topbottom"></div>
+			
+			<div class="Bot Botfront"></div>
+			<div class="Bot Botbackpyr"></div>
+			<div class="Bot Botleft"></div>
+			<div class="Bot Botright"></div>
+			<div class="Botbottom"></div>
+		  </div>
+		  
+		</div>
+		<div class="turnpage">
+			<div class="turnLeft2">Left</div>
+			<div class="flip2">Flip</div>
+			<div class="nada">Current</div>
+			<div class="turnRight2">Right</div>
+		</div>
+	</div>
+    <div class="box__face box__face--top"></div>
+    <div class="box__face box__face--bottom"></div>
+  </div>
+</div>
+
+</html>

@@ -1,0 +1,86 @@
+<html>
+
+	<head>
+		<link href="galerie.css" rel="stylesheet" type="text/css"/>
+		<meta charset="utf-8"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<script>
+	$(document).ready(function(){
+		$('.card5').click(function() {
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+			
+			
+		});
+		$('.card4').click(function() {
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.card2').click(function() {
+			
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.card3').click(function() {
+			
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.card1').click(function() {
+			
+			if ($(this).css("z-index") == "0" || $(this).css("z-index") == "1") {
+				$(this).toggleClass('movement');
+			}
+		});
+		$('.next').click(function() {
+			$(".next").attr("disabled", true);
+			$(".previous").attr("disabled", true);
+			$('.card5').removeClass('card5').addClass('temp');
+			$('.card4').removeClass('card4').addClass('card5');
+			$('.card3').removeClass('card3').addClass('card4');
+			$('.card2').removeClass('card2').addClass('card3');
+			$('.card1').removeClass('card1').addClass('card2');
+			setTimeout(function(){
+				$('.temp').removeClass('temp').addClass('card1');
+				$(".next").attr("disabled", false);
+				$(".previous").attr("disabled", false);
+			}, 2000);
+			
+		});
+		$('.previous').click(function() {
+			$(".previous").attr("disabled", true);
+				$(".next").attr("disabled", true);
+			$('.card1').removeClass('card1').addClass('temp2');
+			$('.card2').removeClass('card2').addClass('card1');
+			$('.card3').removeClass('card3').addClass('card2');
+			$('.card4').removeClass('card4').addClass('card3');
+			$('.card5').removeClass('card5').addClass('card4');
+			setTimeout(function(){
+				$('.temp2').removeClass('temp2').addClass('card5');
+				$(".previous").attr("disabled", false);
+					$(".next").attr("disabled", false);
+			}, 2000);
+			
+		});
+		
+	});
+	
+	</script>
+
+	<body>
+		<div class="scene">
+			<input type="submit" value="" class="next">
+			<input type="submit" value="" class="previous">
+			<img src="Character_Albedo_Card.png" class="card1">
+			<img src="Character_Diluc_Card.png"class="card2">
+			<img src="Character_Tartaglia_Card.png" class="card3">
+			<img src="Character_Xiao_Card.png" class="card4">
+			<img src="Character_Zhongli_Card.png"class="card5">
+		</div>
+	</body>
+</html>
